@@ -23,3 +23,4 @@ The seed data includes three doctors and two patients. Use **Completed** appoint
 
 Passwords are stored as SHA-256 hashes for an educational local project. A production hospital system should use salted adaptive password hashing, role-based permissions, audit logs, encryption, backups, and formal privacy/compliance controls.
 "# HospitalManagementSystem" 
+"# HospitalManagementSystem" 
