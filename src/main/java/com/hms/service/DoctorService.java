@@ -1,0 +1,1 @@
+package com.hms.service; import com.hms.dao.DoctorDao; import com.hms.model.Doctor; import java.sql.SQLException; import java.util.List; public class DoctorService{private final DoctorDao dao;public DoctorService(DoctorDao d){dao=d;}public List<Doctor> findAll(String s)throws SQLException{return dao.findAll(s);}}

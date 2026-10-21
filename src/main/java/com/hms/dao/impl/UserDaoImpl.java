@@ -1,0 +1,3 @@
+package com.hms.dao.impl;
+import com.hms.config.DatabaseConnection; import com.hms.dao.UserDao; import com.hms.model.User; import java.sql.*; import java.util.*;
+public class UserDaoImpl implements UserDao { public Optional<User> authenticate(String username,String passwordHash)throws SQLException{String q="SELECT user_id,username,role,full_name FROM users WHERE username=? AND password_hash=? AND active=TRUE";try(Connection c=DatabaseConnection.getConnection();PreparedStatement p=c.prepareStatement(q)){p.setString(1,username);p.setString(2,passwordHash);try(ResultSet r=p.executeQuery()){return r.next()?Optional.of(new User(r.getInt(1),r.getString(2),r.getString(3),r.getString(4))):Optional.empty();}}} }
